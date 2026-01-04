@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support | Slip-Scan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Specific overrides for the Support/Contact page content */
+        :root {
+            --brand-orange: #FF4F00;
+            --brand-blue: #0A2540;
+            --brand-light-blue: #F0F4F9;
+        }
+
+        .support-hero {
+            background: linear-gradient(135deg, #F0F4F9 0%, #FFFFFF 50%, #E6EFFF 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .category-badge {
+            background: linear-gradient(135deg, var(--brand-orange) 0%, #FF6B2B 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(255, 79, 0, 0.3);
+        }
+
+        /* FAQ Styling */
+        .faq-section {
+            background: white;
+            padding: 4rem 2rem;
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-details {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .faq-details:hover {
+            border-color: var(--brand-orange);
+            transform: translateX(5px);
+        }
+
+        .faq-details[open] {
+            border-color: var(--brand-orange);
+        }
+
+        .faq-summary {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--brand-blue);
+            font-size: 1.1rem;
+        }
+
+        .faq-summary::-webkit-details-marker { display: none; }
+
+        .faq-number {
+            display: inline-flex;
+            width: 32px;
+            height: 32px;
+            background: #E0F2FE;
+            color: var(--brand-orange);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            margin-right: 1rem;
+        }
+
+        .faq-content {
+            padding: 0 2rem 1.5rem 4.5rem; /* Indented text */
+            color: #4B5563;
+            line-height: 1.6;
+        }
+
+        .faq-arrow {
+            transition: transform 0.3s ease;
+            color: var(--brand-orange);
+        }
+
+        .faq-details[open] .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Support Form Styling */
+        .contact-section {
+            background: var(--brand-light-blue);
+            padding: 4rem 2rem;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .faq-content { padding: 0 1.5rem 1.5rem 1.5rem; }
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+
+        .form-label {
+            display: block;
+            font-weight: 700;
+            color: var(--brand-blue);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            border-color: var(--brand-orange);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 79, 0, 0.1);
+        }
+
+        .submit-btn {
+            background-color: var(--brand-orange);
+            color: white;
+            font-weight: 700;
+            padding: 1rem 3rem;
+            border-radius: 12px;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 6px rgba(255, 79, 0, 0.2);
+        }
+
+        .submit-btn:hover {
+            background-color: #E64600;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px rgba(255, 79, 0, 0.3);
+        }
+
+        /* Direct Email Box */
+        .direct-email {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .email-link {
+            color: var(--brand-orange);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .email-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="SlipScan.png" width="30" style="border-radius: 8px" alt="Slip-Scan Logo">
+                <span>Slip-Scan</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="index.html#testimonials">Reviews</a></li>
+                <li><a href="business.html">For Business</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li class="mobile-only-cta"><a href="#contact-form">Get Support</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#contact-form" class="btn-primary">Get Support</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="support-hero">
+            <div class="container">
+                <div class="category-badge">Support Center</div>
+                <h1 style="font-size: 3.5rem; font-weight: 900; color: #0A2540; margin-bottom: 1.5rem; line-height: 1.1;">
+                    How Can We Help You?
+                </h1>
+                <p style="font-size: 1.25rem; color: #4B5563; max-width: 700px; margin: 0 auto;">
+                    Find answers to common questions or reach out to our dedicated support team. We're here to ensure your Slip-Scan experience is seamless.
+                </p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="faq-container">
+                <div class="section-header center">
+                    <h2 style="font-size: 2.5rem; color: #0A2540; margin-bottom: 0.5rem;">Frequently Asked Questions</h2>
+                    <p style="color: #6B7280;">Quick answers to questions you may have</p>
+                </div>
+
+                <details class="faq-details">
+                    <summary class="faq-summary">
+                        <span><span class="faq-number">1</span>How do I connect Slip-Scan to Xero or Sage?</span>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Connecting your accounting software is quick and secure. Follow these steps:</p>
+                        <ol style="padding-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Navigate to the <strong>Settings</strong> menu in the app</li>
+                            <li>Select <strong>Integrations</strong></li>
+                            <li>Choose either Xero or Sage</li>
+                            <li>Log in with your accounting software credentials</li>
+                            <li>Authorize Slip-Scan to access your account</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details class="faq-details">
+                    <summary class="faq-summary">
+                        <span><span class="faq-number">2</span>How do I generate reports?</span>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Slip-Scan offers powerful reporting capabilities. Simply navigate to the <strong>Reporting</strong> tab, select your date range (last 30 days, custom range, etc.), and choose your format (PDF, CSV, or Excel). You can then share or export the report instantly.</p>
+                    </div>
+                </details>
+
+                <details class="faq-details">
+                    <summary class="faq-summary">
+                        <span><span class="faq-number">3</span>What can the AI chat integration do?</span>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Our AI Chat assistant is your personal finance helper. You can ask it natural language questions like "How much did I spend on fuel last month?" or "Show me all Woolworths transactions". It can analyze spending patterns, find specific transactions, and help auto-categorize expenses.</p>
+                    </div>
+                </details>
+
+                <details class="faq-details">
+                    <summary class="faq-summary">
+                        <span><span class="faq-number">4</span>Is my financial data safe?</span>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </summary>
+                    <div class="faq-content">
+                        <p><strong>Absolutely.</strong> Your data security is our top priority. We use End-to-End Encryption for all data in transit and at rest. Additionally, we implement Row Level Security (RLS), meaning only you can access your financial information—even our internal team cannot see your data.</p>
+                    </div>
+                </details>
+
+                <details class="faq-details">
+                    <summary class="faq-summary">
+                        <span><span class="faq-number">5</span>Can I share my scans?</span>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Yes! Open any expense detail screen, tap the <strong>Share</strong> icon, and choose to export as PDF or JPEG. You can send it via Email, WhatsApp, or any other sharing app on your device.</p>
+                    </div>
+                </details>
+
+                <details class="faq-details">
+                    <summary class="faq-summary">
+                        <span><span class="faq-number">6</span>How does Team Management work?</span>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Team Management allows Admins to invite members, review their submissions in an "Approval Queue," and sync approved expenses to accounting software. Team members can snap and submit expenses instantly, tracking the status of their reimbursements in real-time.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="contact-form" class="contact-section">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 style="font-size: 2.5rem; color: #0A2540;">Still Need Help?</h2>
+                    <p style="color: #6B7280;">Submit a support request and our team will get back to you within 24 hours.</p>
+                </div>
+
+                <div class="contact-card">
+                    <form id="support-form">
+                        <div class="form-grid">
+                            <div>
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                            </div>
+                            <div>
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div>
+                                <label for="topic" class="form-label">Support Topic *</label>
+                                <select id="topic" name="subject" class="form-select" required>
+                                    <option value="">Select a topic...</option>
+                                    <option value="Integration Help (Xero/Sage)">Integration Help (Xero/Sage)</option>
+                                    <option value="Reporting Issue">Reporting Issue</option>
+                                    <option value="AI Chat Question">AI Chat Question</option>
+                                    <option value="Team Management">Team Management</option>
+                                    <option value="Billing Question">Billing Question</option>
+                                    <option value="Data Privacy">Data Privacy</option>
+                                    <option value="Technical Issue">Technical Issue</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="device" class="form-label">Device & App Version</label>
+                                <input type="text" id="device" name="device" class="form-input" placeholder="e.g. iPhone 15, v1.0.2">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="body" class="form-label">Describe Your Issue *</label>
+                            <textarea id="body" name="body" class="form-textarea" rows="6" placeholder="Please provide as much detail as possible..." required></textarea>
+                        </div>
+
+                        <div style="text-align: center;">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Support Request
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="direct-email">
+                        <div style="width: 60px; height: 60px; background: #FFF0EB; color: #FF4F00; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4 style="font-size: 1.1rem; color: #0A2540; margin-bottom: 0.25rem;">Direct Email Support</h4>
+                        <a href="mailto:support@appcraftstudios.com" class="email-link">support@appcraftstudios.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="SlipScan.png" width="30" style="border-radius: 8px" alt="Slip-Scan Logo">
+                        <span>Slip-Scan</span>
+                    </a>
+                    <p class="footer-desc">
+                        AI-powered receipt scanning and pre-accounting automation for freelancers, businesses, and teams worldwide.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="business.html">For Business</a></li>
+                        <li><a href="index.html#integrations">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="resources.html">Blog</a></li>
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="#">API Docs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Slip-Scan. A subsidiary of AppCraft Studios Pty Ltd. All rights reserved.</p>
+                <div class="footer-certifications">
+                    <span title="Data is encrypted at rest and in transit"><i class="fas fa-lock"></i> 256-bit Encryption</span>
+                    <span title="We support data rights and deletion"><i class="fas fa-user-shield"></i> GDPR Compliant</span>
+                    <span title="Built on SOC 2 certified cloud providers"><i class="fas fa-server"></i> SOC 2 Infrastructure</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Mailto Handler Logic
+        const supportForm = document.getElementById('support-form');
+        if (supportForm) {
+            supportForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const topic = document.getElementById('topic').value;
+                const device = document.getElementById('device').value;
+                const issue = document.getElementById('body').value;
+
+                const bodyParts = [
+                    "Name: " + name,
+                    "Email: " + email,
+                    "Device: " + device,
+                    "\n-----------------\n\n" + issue
+                ];
+
+                const subject = encodeURIComponent(topic || "Support Request");
+                const body = encodeURIComponent(bodyParts.join('\n'));
+
+                window.location.href = `mailto:support@appcraftstudios.com?subject=${subject}&body=${body}`;
+            });
+        }
+    </script>
+</body>
+</html>

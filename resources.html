@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resources & Blog | Slip-Scan</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .resources-hero {
+        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        padding: 8rem 2rem 6rem;
+        color: white;
+        text-align: center;
+      }
+
+      .resources-hero h1 {
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+      }
+
+      .category-tab {
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        background: white;
+        border: 2px solid #e5e7eb;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+        color: #4b5563;
+      }
+      .category-tab.active,
+      .category-tab:hover {
+        background: #ff4f00;
+        color: white;
+        border-color: #ff4f00;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+        border: 1px solid #e5e7eb;
+        display: flex;
+        flex-direction: column;
+      }
+      .blog-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .blog-image {
+        height: 220px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      .blog-content {
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .blog-category-badge {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: rgba(255, 255, 255, 0.95);
+        color: #0a2540;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Additional Resources Section */
+      .additional-resources {
+        background: white;
+        padding: 5rem 2rem;
+        text-align: center;
+      }
+
+      .resource-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 3rem auto 0;
+      }
+
+      .res-card {
+        padding: 2.5rem 2rem;
+        border-radius: 20px;
+        text-align: left;
+        transition: transform 0.3s;
+      }
+      .res-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .res-card.blue-tint {
+        background-color: #f0f4ff;
+      }
+      .res-card.orange-tint {
+        background-color: #fff5f0;
+      }
+      .res-card.green-tint {
+        background-color: #f0fff4;
+      }
+
+      .res-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: #0a2540;
+      }
+
+      .res-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #0a2540;
+        margin-bottom: 0.75rem;
+      }
+      .res-card p {
+        font-size: 0.95rem;
+        color: #6b7280;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        min-height: 48px;
+      }
+
+      .res-link {
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .text-orange {
+        color: #ff4f00;
+      }
+      .text-muted {
+        color: #9ca3af;
+      }
+
+      /* Ready To Transform Section */
+      .transform-section {
+        background: #f0f4f9;
+        padding: 6rem 2rem;
+        text-align: center;
+      }
+
+      .transform-content h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #0a2540;
+        margin-bottom: 1rem;
+      }
+      .transform-content p {
+        font-size: 1.1rem;
+        color: #4b5563;
+        margin-bottom: 2.5rem;
+      }
+
+      .app-badges {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+      }
+
+      .app-btn {
+        background: white;
+        color: #0a2540;
+        padding: 0.75rem 1.5rem;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s;
+      }
+      .app-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+      .app-btn i {
+        font-size: 1.5rem;
+      }
+
+      .small-note {
+        font-size: 0.85rem;
+        color: #9ca3af;
+      }
+
+      /* Animation class for filtering */
+      .fade-in {
+        animation: fadeIn 0.5s;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .resources-hero h1 {
+          font-size: 2.5rem;
+        }
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav-container">
+        <a href="index.html" class="logo">
+          <img
+            src="SlipScan.png"
+            width="30"
+            style="border-radius: 8px"
+            alt="Slip-Scan Logo"
+          />
+          <span>Slip-Scan</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#testimonials">Reviews</a></li>
+          <li><a href="business.html">For Business</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li class="mobile-only-cta">
+            <a href="index.html#pricing">Start Free</a>
+          </li>
+        </ul>
+        <div class="nav-cta">
+          <a href="index.html#pricing" class="btn-primary">Start Free</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle Navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <section class="resources-hero">
+      <div class="container">
+        <h1>Resources & Learning</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9">
+          Expert tips, guides, and best practices for mastering receipt
+          management.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding: 4rem 2rem; background: white">
+      <div class="container">
+        <div
+          style="
+            background: linear-gradient(
+                135deg,
+                rgba(37, 99, 235, 0.9) 0%,
+                rgba(30, 64, 175, 0.9) 100%
+              ),
+              url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              padding: 0.4rem 1rem;
+              border-radius: 50px;
+              font-weight: 600;
+              font-size: 0.9rem;
+              margin-bottom: 1rem;
+              backdrop-filter: blur(4px);
+            "
+            >📌 Featured Guide</span
+          >
+          <h2
+            style="
+              font-size: 2.5rem;
+              font-weight: 800;
+              margin-bottom: 1rem;
+              max-width: 800px;
+            "
+          >
+            Complete Guide to Going Paperless in 2026
+          </h2>
+          <p
+            style="
+              font-size: 1.1rem;
+              margin-bottom: 2rem;
+              max-width: 600px;
+              line-height: 1.6;
+            "
+          >
+            Learn how to transition your business to a 100% paperless receipt
+            management system. Step-by-step instructions and expert tips
+            included.
+          </p>
+          <a
+            href="guide-paperless-2026.html"
+            class="btn btn-primary"
+            style="background: white; color: #2563eb; border: none"
+            >Read Guide</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 0 2rem 5rem; background: white">
+      <div class="container">
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+          "
+        >
+          <button class="category-tab active" data-category="all">
+            All Posts
+          </button>
+          <button class="category-tab" data-category="tax">Tax Tips</button>
+          <button class="category-tab" data-category="tech">Technology</button>
+          <button class="category-tab" data-category="finance">Finance</button>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card" data-category="tax">
+            <div
+              class="blog-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80');
+              "
+            >
+              <span class="blog-category-badge">Tax Tips</span>
+            </div>
+            <div class="blog-content">
+              <h3
+                style="
+                  font-size: 1.25rem;
+                  font-weight: 700;
+                  color: #0a2540;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                10 Tax Deductions Owners Miss
+              </h3>
+              <p
+                style="
+                  color: #666;
+                  font-size: 0.95rem;
+                  margin-bottom: 1rem;
+                  flex: 1;
+                "
+              >
+                Don't leave money on the table. Here are the most commonly
+                overlooked deductions you should be tracking.
+              </p>
+              <a
+                href="blog-tax-deductions.html"
+                style="
+                  color: #ff4f00;
+                  font-weight: 600;
+                  display: inline-flex;
+                  align-items: center;
+                  text-decoration: none;
+                "
+                >Read More
+                <i
+                  class="fas fa-arrow-right"
+                  style="margin-left: 5px; font-size: 0.8rem"
+                ></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="tech">
+            <div
+              class="blog-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80');
+              "
+            >
+              <span class="blog-category-badge">Technology</span>
+            </div>
+            <div class="blog-content">
+              <h3
+                style="
+                  font-size: 1.25rem;
+                  font-weight: 700;
+                  color: #0a2540;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                AI in Receipt Management
+              </h3>
+              <p
+                style="
+                  color: #666;
+                  font-size: 0.95rem;
+                  margin-bottom: 1rem;
+                  flex: 1;
+                "
+              >
+                Explore how artificial intelligence is revolutionizing expense
+                tracking and preventing fraud.
+              </p>
+              <a
+                href="blog-ai-receipts.html"
+                style="
+                  color: #ff4f00;
+                  font-weight: 600;
+                  display: inline-flex;
+                  align-items: center;
+                  text-decoration: none;
+                "
+                >Read More
+                <i
+                  class="fas fa-arrow-right"
+                  style="margin-left: 5px; font-size: 0.8rem"
+                ></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="finance">
+            <div
+              class="blog-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80');
+              "
+            >
+              <span class="blog-category-badge">Finance</span>
+            </div>
+            <div class="blog-content">
+              <h3
+                style="
+                  font-size: 1.25rem;
+                  font-weight: 700;
+                  color: #0a2540;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Streamline Approvals
+              </h3>
+              <p
+                style="
+                  color: #666;
+                  font-size: 0.95rem;
+                  margin-bottom: 1rem;
+                  flex: 1;
+                "
+              >
+                Learn how to set up efficient approval workflows that save time
+                and reduce errors in your business.
+              </p>
+              <a
+                href="blog-approval-workflow.html"
+                style="
+                  color: #ff4f00;
+                  font-weight: 600;
+                  display: inline-flex;
+                  align-items: center;
+                  text-decoration: none;
+                "
+                >Read More
+                <i
+                  class="fas fa-arrow-right"
+                  style="margin-left: 5px; font-size: 0.8rem"
+                ></i
+              ></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="additional-resources">
+      <div class="container">
+        <h2 style="font-size: 2.2rem; font-weight: 800; color: #0a2540">
+          Additional Resources
+        </h2>
+        <p style="color: #6b7280; margin-top: 0.5rem">
+          Everything you need to get the most out of Slip-Scan
+        </p>
+
+        <div class="resource-cards-grid">
+          <div class="res-card blue-tint">
+            <div class="res-icon" style="color: #2563eb">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h3>User Guide</h3>
+            <p>Comprehensive documentation on every feature</p>
+            <span class="res-link text-muted">Coming Soon</span>
+          </div>
+
+          <div class="res-card orange-tint">
+            <div class="res-icon" style="color: #ff4f00">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Privacy Policy</h3>
+            <p>Learn how we protect your financial data</p>
+            <a href="#" class="res-link text-orange">View Policy →</a>
+          </div>
+
+          <div class="res-card green-tint">
+            <div class="res-icon" style="color: #059669">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3>Community Forum</h3>
+            <p>Connect with other Slip-Scan users</p>
+            <span class="res-link text-muted">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="transform-section">
+      <div class="container transform-content">
+        <h2>Ready to Transform Your Finances?</h2>
+        <p>
+          Download Slip-Scan today and experience automated financial clarity
+        </p>
+
+        <div class="app-badges">
+          <a
+            href="https://apps.apple.com/ph/app/slip-scan/id6754660832"
+            class="app-btn"
+          >
+            <i class="fab fa-apple"></i> App Store
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.appcraftstudios.slip_scan&pcampaignid=web_share"
+            class="app-btn"
+          >
+            <i class="fab fa-google-play"></i> Google Play
+          </a>
+        </div>
+
+        <p class="small-note">
+          Available for iOS and Android • Free to download
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <a href="index.html" class="footer-logo">
+              <img
+                src="SlipScan.png"
+                width="30"
+                style="border-radius: 8px"
+                alt="Slip-Scan Logo"
+              />
+              <span>Slip-Scan</span>
+            </a>
+            <p class="footer-desc">
+              AI-powered receipt scanning and pre-accounting automation for
+              freelancers, businesses, and teams worldwide.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#pricing">Pricing</a></li>
+              <li><a href="business.html">For Business</a></li>
+              <li><a href="index.html#integrations">Integrations</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="resources.html">Blog</a></li>
+              <li><a href="contact.html">Help Center</a></li>
+              <li><a href="#">API Docs</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Slip-Scan. A subsidiary of AppCraft Studios Pty Ltd. All
+            rights reserved.
+          </p>
+          <div class="footer-certifications">
+            <span title="Data is encrypted at rest and in transit"
+              ><i class="fas fa-lock"></i> 256-bit Encryption</span
+            >
+            <span title="We support data rights and deletion"
+              ><i class="fas fa-user-shield"></i> GDPR Compliant</span
+            >
+            <span title="Built on SOC 2 certified cloud providers"
+              ><i class="fas fa-server"></i> SOC 2 Infrastructure</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Article Filtering Logic
+      document.addEventListener("DOMContentLoaded", () => {
+        const tabs = document.querySelectorAll(".category-tab");
+        const articles = document.querySelectorAll(".blog-card");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            // Remove active class from all tabs
+            tabs.forEach((t) => t.classList.remove("active"));
+            // Add active class to clicked tab
+            tab.classList.add("active");
+
+            const category = tab.getAttribute("data-category");
+
+            articles.forEach((article) => {
+              const articleCategory = article.getAttribute("data-category");
+
+              if (category === "all" || articleCategory === category) {
+                article.style.display = "flex";
+                article.classList.add("fade-in");
+                // Remove animation class after it plays so it can replay if filtered again
+                setTimeout(() => article.classList.remove("fade-in"), 500);
+              } else {
+                article.style.display = "none";
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
