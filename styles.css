@@ -1650,9 +1650,39 @@ input:checked + .slider:before {
         overflow-y: auto;
     }
 
+   .early-bird-section {
+        padding: 4rem 1rem; 
+   }
+
+   .early-bird-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+   }
+
+   .early-bird-card {
+        padding: 2rem 1.5rem;
+   }
+
     .nav-links.active {
         left: 0;
     }
+
+   .deal-amount {
+        font-size: 3rem;
+   }
+
+   .deal-price-box {
+        transform: rotate(0deg);
+        width: 100%; /* Ensures box fits the container */
+        max-width: 300px;
+   }
+
+   .deal-actions {
+        justify-content: center;
+        flex-direction: column; /* Stacks button and guarantee text */
+        gap: 1rem;
+   }
 
     .nav-links li {
         width: 100%;
