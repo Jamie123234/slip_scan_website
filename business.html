@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- HEADER -->
     <header class="header">
         <nav class="nav-container">
             <a href="index.html" class="logo">
@@ -34,7 +33,6 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero" style="background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%); color: white;">
         <div class="container" style="grid-template-columns: 1fr;">
             <div class="hero-content" style="text-align: center; max-width: 900px; margin: 0 auto;">
@@ -64,7 +62,6 @@
         </div>
     </section>
 
-    <!-- BUSINESS FEATURES -->
     <section class="features">
         <div class="container">
             <div class="section-header center">
@@ -98,7 +95,6 @@
         </div>
     </section>
 
-    <!-- USE CASES -->
     <section class="how-it-works" style="background: var(--bg-light);">
         <div class="container">
             <div class="section-header center">
@@ -130,7 +126,6 @@
         </div>
     </section>
 
-    <!-- BUSINESS PRICING -->
     <section class="pricing">
         <div class="container">
             <div class="section-header center">
@@ -138,40 +133,122 @@
                 <h2>Scale With Your Team</h2>
                 <p>Transparent pricing designed for growing businesses.</p>
             </div>
-            <div class="pricing-grid">
+            
+            <div style="display: none;">
+                <input type="radio" name="plan-type" value="business" checked>
+                <div id="personal-plans"></div>
+                <div class="switch-selection"></div>
+            </div>
+            <div class="pricing-toggle">
+                <span class="toggle-label">Monthly</span>
+                <label class="switch">
+                    <input type="checkbox" id="pricing-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label">Annual <span class="save-badge">Save up to 50%</span></span>
+            </div>
+
+            <div
+                id="business-plans"
+                class="pricing-grid"
+                style="justify-content: center"
+            >
                 <div class="pricing-card">
-                    <h3 class="pricing-header">Business</h3>
-                    <p class="pricing-desc">For teams of 5-50 people</p>
+                    <div class="pricing-header">
+                        <h3>Business</h3>
+                        <p class="pricing-desc">For small teams (Up to 10 users)</p>
+                    </div>
                     <div class="pricing-price">
-                        <span class="price-amount">$49</span>
+                        <span
+                            class="price-amount"
+                            data-monthly="19.99"
+                            data-annual="149.99"
+                            >$19.99</span
+                        >
                         <span class="price-period">/month</span>
+                        <div class="price-annual">Billed annually: $149.99</div>
                     </div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> <strong>500 scans</strong> per month</li>
-                        <li><i class="fas fa-check"></i> Up to <strong>50 team members</strong></li>
-                        <li><i class="fas fa-check"></i> Approval workflows</li>
-                        <li><i class="fas fa-check"></i> Workspace management</li>
-                        <li><i class="fas fa-check"></i> Xero & Sage integration</li>
-                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li>
+                            <i class="fas fa-check"></i> <strong>500 scans</strong>/mo
+                        </li>
+                        <li><i class="fas fa-check"></i> Team Management</li>
+                        <li><i class="fas fa-check"></i> Approval Workflows</li>
+                        <li><i class="fas fa-check"></i> Xero & Sage Integration</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-outline btn-full">Get Started</a>
+                    <a href="contact.html" class="btn btn-outline btn-full"
+                        >Start Business Trial</a
+                    >
                 </div>
 
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
-                    <h3 class="pricing-header">Enterprise</h3>
-                    <p class="pricing-desc">For large organizations</p>
-                    <div class="pricing-price">
-                        <span class="price-amount">$199</span>
-                        <span class="price-period">/month</span>
+                <div
+                    class="pricing-card featured"
+                    style="border-color: var(--primary)"
+                >
+                    <div class="pricing-badge">Scalable</div>
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <p class="pricing-desc">High volume & larger teams</p>
                     </div>
+
+                    <div class="enterprise-controls" style="margin-bottom: 1.5rem">
+                        <label
+                            style="
+                  font-weight: 700;
+                  color: var(--text-dark);
+                  display: block;
+                  margin-bottom: 0.5rem;
+                "
+                        >
+                            Team Size:
+                            <span id="user-count-display" style="color: var(--primary)"
+                                >20 Users</span
+                            >
+                        </label>
+                        <input
+                            type="range"
+                            id="enterprise-slider"
+                            min="0"
+                            max="3"
+                            step="1"
+                            value="0"
+                            style="width: 100%; cursor: pointer"
+                        />
+                        <div
+                            style="
+                  display: flex;
+                  justify-content: space-between;
+                  font-size: 0.8rem;
+                  color: var(--text-muted);
+                  margin-top: 5px;
+                "
+                        >
+                            <span>20</span>
+                            <span>50</span>
+                            <span>100</span>
+                            <span>500</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-price">
+                        <span class="price-amount" id="enterprise-amount">$44.99</span>
+                        <span class="price-period">/month</span>
+                        <div class="price-annual" id="enterprise-annual-text">
+                            Billed annually: $269.99
+                        </div>
+                    </div>
+
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> <strong>Unlimited scans</strong></li>
-                        <li><i class="fas fa-check"></i> <strong>Unlimited team members</strong></li>
-                        <li><i class="fas fa-check"></i> Custom approval workflows</li>
-                        <li><i class="fas fa-check"></i> All integrations</li>
-                        <li><i class="fas fa-check"></i> 24/7 dedicated support</li>
-                        <li><i class="fas fa-check"></i> SSO & SAML</li>
+                        <li>
+                            <i class="fas fa-check"></i> <strong>Unlimited</strong> Scans
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> <strong>Unlimited</strong> AI Chat
+                        </li>
+                        <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+                        <li><i class="fas fa-check"></i> Custom API Integration</li>
+                        <li><i class="fas fa-check"></i> SSO & Advanced Security</li>
                     </ul>
                     <a href="contact.html" class="btn btn-primary btn-full">Contact Sales</a>
                 </div>
@@ -179,7 +256,6 @@
         </div>
     </section>
 
-    <!-- FINAL CTA -->
     <section class="final-cta">
         <div class="container">
             <div class="cta-content">
@@ -199,7 +275,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -264,5 +339,36 @@
     </footer>
 
     <script src="script.js"></script>
+    <div id="app-subscription-modal" class="modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal-icon">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <h3>Subscribe via the App</h3>
+        <p>
+          To ensure the best security and seamless experience, all subscriptions
+          are managed directly through our mobile app.
+        </p>
+
+        <div class="modal-buttons">
+          <a
+            href="https://apps.apple.com/ph/app/slip-scan/id6754660832"
+            target="_blank"
+            class="store-button-small"
+          >
+            <i class="fab fa-apple"></i> App Store
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.appcraftstudios.slip_scan&pcampaignid=web_share"
+            target="_blank"
+            class="store-button-small"
+          >
+            <i class="fab fa-google-play"></i> Google Play
+          </a>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

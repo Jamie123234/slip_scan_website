@@ -1441,6 +1441,8 @@ input:checked + .slider:before {
     margin-bottom: 0.75rem;
 }
 
+/* GENERIC FOOTER LINKS */
+/* This rule was overriding your logo previously */
 .footer-col a {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
@@ -1454,28 +1456,46 @@ input:checked + .slider:before {
     padding-left: 5px;
 }
 
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+/* FOOTER LOGO - FIXED */
+/* We added ".footer-col" before .footer-logo to increase specificity.
+   This ensures "display: flex" wins over "display: inline-block" */
+.footer-col .footer-logo {
+    display: flex !important;    /* Force flex layout */
+    flex-direction: row;         /* Force side-by-side alignment */
+    align-items: center;         /* Vertically center align */
+    justify-content: flex-start; /* Left align */
+    gap: 0.75rem;                /* Space between icon and text */
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    color: white;
+    color: white;                /* Override the grey color from generic links */
     text-decoration: none;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+/* Prevent the hover "jump" effect seen on other links */
+.footer-col .footer-logo:hover {
+    padding-left: 0;
+    color: white;
+    transform: none;
 }
 
 .logo span, 
-.footer-logo span {
+.footer-col .footer-logo span {
     line-height: 1;
     padding-top: 2px;
     display: block;
 }
 
 .logo img, 
-.footer-logo img {
+.footer-col .footer-logo img {
     display: block;
     flex-shrink: 0;
+    width: 30px;
+    height: auto;
+    border-radius: 8px;
+    margin: 0;
 }
 
 .footer-desc,
@@ -1505,9 +1525,11 @@ input:checked + .slider:before {
     font-size: 1.1rem;
 }
 
+/* Reset generic link hover effects for social icons too */
 .social-links a:hover {
     background: var(--primary);
     transform: translateY(-3px);
+    padding-left: 0; 
 }
 
 .footer-bottom {
