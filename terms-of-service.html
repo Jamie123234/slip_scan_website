@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem("theme") || "dark";
+            if (savedTheme === "light") {
+                document.documentElement.classList.add("light-theme");
+            } else {
+                document.documentElement.classList.add("dark-theme");
+            }
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Slip-Scan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <style>
+        .legal-hero {
+            background: linear-gradient(135deg, var(--bg-alt) 0%, var(--white) 50%, var(--bg-alt) 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .legal-content .container {
+            max-width: 900px;
+        }
+
+        .legal-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+
+        .legal-section {
+            margin-bottom: 2rem;
+        }
+
+        .legal-section h2 {
+            font-size: 1.75rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .legal-section p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        /* Dark Mode Overrides */
+        :root.dark-theme .legal-hero {
+            background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg-light) 100%);
+        }
+
+        :root.dark-theme .legal-card {
+            background: #0F172A;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        :root.dark-theme .legal-section h2 {
+            color: white;
+        }
+
+        :root.dark-theme .legal-section p {
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                <img src="../assets/SlipScan.png" width="30" style="border-radius: 8px" alt="Slip-Scan Logo">
+                <span>Slip-Scan</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#features">Features</a></li>
+                <li><a href="../index.html#pricing">Pricing</a></li>
+                <li><a href="../index.html#testimonials">Reviews</a></li>
+                <li><a href="business.html">For Business</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li class="mobile-only-cta"><a href="contact.html">Get Support</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button data-theme-toggle class="btn-outline" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="contact.html" class="btn-primary">Get Support</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="legal-hero">
+            <div class="container">
+
+                <h1
+                    style="font-size: 3.5rem; font-weight: 900; color: var(--text-dark); margin-bottom: 1.5rem; line-height: 1.1;">
+                    Terms of Service
+                </h1>
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">
+                    Last Updated: October 15, 2025
+                </p>
+            </div>
+        </section>
+
+        <section class="legal-content" style="padding: 2rem 0 4rem;">
+            <div class="container">
+                <div class="legal-card">
+                    <div class="legal-section">
+                        <p>Welcome to AppCraft Studios! These Terms of Service ("Terms") govern your use of the AppCraft
+                            Studios website (the "Website") and any related services provided by AppCraft Studios (Pty)
+                            Ltd ("us", "we", or "our"). By accessing or using our Website, you agree to be bound by
+                            these Terms.</p>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2>1. Use of Our Website</h2>
+                        <p>You agree to use the Website only for lawful purposes and in a way that does not infringe the
+                            rights of, restrict or inhibit anyone else's use and enjoyment of the Website. Prohibited
+                            behavior includes harassing or causing distress or inconvenience to any other user.</p>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2>2. Intellectual Property</h2>
+                        <p>All content included on the Website, such as text, graphics, logos, and software, is the
+                            property of AppCraft Studios (Pty) Ltd or its content suppliers and protected by South
+                            African and international copyright laws.</p>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2>3. Limitation of Liability</h2>
+                        <p>The Website and the information contained herein are provided "as is". AppCraft Studios makes
+                            no express or implied representations or warranties regarding the Website. To the fullest
+                            extent permitted by law, AppCraft Studios will not be liable for any damages arising out of
+                            or in connection with the use of this Website.</p>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2>4. Governing Law</h2>
+                        <p>These Terms shall be governed and construed in accordance with the laws of South Africa,
+                            without regard to its conflict of law provisions.</p>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2>5. Changes</h2>
+                        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time.
+                            We will try to provide at least 30 days' notice prior to any new terms taking effect.</p>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2>Contact Us</h2>
+                        <p>If you have any questions about these Terms, please <a href="contact.html"
+                                style="color: var(--primary);">contact us</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/" class="footer-logo">
+                        <img src="../assets/SlipScan.png" width="30" style="border-radius: 8px" alt="Slip-Scan Logo">
+                        <span>Slip-Scan</span>
+                    </a>
+                    <p class="footer-desc">
+                        AI-powered receipt scanning and pre-accounting automation for freelancers, businesses, and teams
+                        worldwide.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="../index.html#features">Features</a></li>
+                        <li><a href="../index.html#pricing">Pricing</a></li>
+                        <li><a href="business.html">For Business</a></li>
+                        <li><a href="../index.html#integrations">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="resources.html">Blog</a></li>
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="#">API Docs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Slip-Scan. A subsidiary of AppCraft Studios Pty Ltd. All rights reserved.</p>
+                <div class="footer-certifications">
+                    <span title="Data is encrypted at rest and in transit"><i class="fas fa-lock"></i> 256-bit
+                        Encryption</span>
+                    <span title="We support data rights and deletion"><i class="fas fa-user-shield"></i> GDPR
+                        Compliant</span>
+                    <span title="Built on SOC 2 certified cloud providers"><i class="fas fa-server"></i> SOC 2
+                        Infrastructure</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/animations.js"></script>
+    <script src="../scripts/theme.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

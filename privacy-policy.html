@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem("theme") || "dark";
+            if (savedTheme === "light") {
+                document.documentElement.classList.add("light-theme");
+            } else {
+                document.documentElement.classList.add("dark-theme");
+            }
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Slip-Scan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <style>
+        .legal-hero {
+            background: linear-gradient(135deg, var(--bg-alt) 0%, var(--white) 50%, var(--bg-alt) 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .legal-content .container {
+            max-width: 900px;
+        }
+
+        .legal-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+
+        .legal-section {
+            /* Margin handled by card spacing */
+            margin-bottom: 0;
+        }
+
+        .legal-section h2 {
+            font-size: 1.75rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .legal-section h3 {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .legal-section p,
+        .legal-section li {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .legal-section ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            list-style-type: disc;
+        }
+
+        .legal-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Dark Mode Overrides */
+        :root.dark-theme .legal-hero {
+            background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg-light) 100%);
+        }
+
+        :root.dark-theme .legal-card {
+            background: #0F172A;
+            /* Footer/Header dark color */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        :root.dark-theme .legal-section h2,
+        :root.dark-theme .legal-section h3 {
+            color: white;
+        }
+
+        :root.dark-theme .legal-section p,
+        :root.dark-theme .legal-section li {
+            color: #cbd5e1;
+        }
+
+        .section-anchor {
+            padding-top: 100px;
+            margin-top: -100px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                <img src="../assets/SlipScan.png" width="30" style="border-radius: 8px" alt="Slip-Scan Logo">
+                <span>Slip-Scan</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#features">Features</a></li>
+                <li><a href="../index.html#pricing">Pricing</a></li>
+                <li><a href="../index.html#testimonials">Reviews</a></li>
+                <li><a href="business.html">For Business</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li class="mobile-only-cta"><a href="contact.html">Get Support</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button data-theme-toggle class="btn-outline" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="contact.html" class="btn-primary">Get Support</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="legal-hero">
+            <div class="container">
+                <h1
+                    style="font-size: 3.5rem; font-weight: 900; color: var(--text-dark); margin-bottom: 1.5rem; line-height: 1.1;">
+                    Privacy Policy
+                </h1>
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">
+                    Effective Date: November 5, 2025
+                </p>
+            </div>
+        </section>
+
+        <section class="legal-content" style="padding: 2rem 0 4rem;">
+            <div class="container">
+
+                <div class="legal-card">
+                    <div id="introduction" class="legal-section">
+                        <h2>1. Introduction</h2>
+                        <p>Welcome to Slip-Scan. AppCraft Studios (Pty) Ltd ("we", "us", "our", or "AppCraft") is
+                            committed to protecting your privacy and ensuring transparency about how we collect, use,
+                            and safeguard your personal information.</p>
+                        <p>This Privacy Policy explains our practices regarding the Slip-Scan mobile application (the
+                            "App" or "Service"), including what data we collect, why we collect it, how we use it, and
+                            your rights concerning your personal information.</p>
+                        <p>By using Slip-Scan, you agree to the collection and use of information in accordance with
+                            this policy. If you do not agree with our policies and practices, please do not use our
+                            Service.</p>
+                    </div>
+                </div>
+
+                <div class="legal-card">
+                    <div id="information" class="legal-section section-anchor">
+                        <h2>2. Information We Collect</h2>
+                        <h3>2.1 Personal Data</h3>
+                        <p>When you create an account or use our Service, we may collect personally identifiable
+                            information, including but not limited to:</p>
+                        <ul>
+                            <li>Email address</li>
+                            <li>First name and last name</li>
+                            <li>Phone number (optional)</li>
+                            <li>Profile picture (optional)</li>
+                            <li>Company name and business details (for business accounts)</li>
+                            <li>Payment information (processed by third-party payment processors)</li>
+                        </ul>
+
+                        <h3>2.2 Document Data</h3>
+                        <p>When you scan receipts, invoices, or other financial documents through the App, we collect
+                            and process:</p>
+                        <ul>
+                            <li>Images of scanned documents</li>
+                            <li>Extracted data including vendor names, dates, amounts, categories, and descriptions</li>
+                            <li>Metadata such as scan time</li>
+                            <li>Custom tags, notes, and categories you assign to documents</li>
+                        </ul>
+
+                        <h3>2.3 Usage Data</h3>
+                        <p>We automatically collect certain information when you access and use our Service:</p>
+                        <ul>
+                            <li>Device information (device type, model, operating system version)</li>
+                            <li>IP address and general location data</li>
+                            <li>App usage statistics (features used, session duration, frequency of use)</li>
+                            <li>Crash reports and diagnostic data</li>
+                            <li>Network information and connection type</li>
+                        </ul>
+
+                        <h3>2.4 Cookies and Tracking Technologies</h3>
+                        <p>We use cookies, analytics tools, and similar technologies to collect usage data, improve user
+                            experience, and analyze trends. You can control cookie preferences through your device
+                            settings.</p>
+                    </div>
+                </div>
+
+                <div class="legal-card">
+                    <div id="permissions" class="legal-section section-anchor">
+                        <h2>3. App Permissions</h2>
+                        <p>Slip-Scan requires certain device permissions to function properly. We only request
+                            permissions necessary for core functionality, and you can manage these in your device
+                            settings.</p>
+
+                        <h3>📷 Camera Access</h3>
+                        <p><strong>Why we need it:</strong> To capture images of receipts, invoices, and financial
+                            documents for digitization and expense tracking.<br>
+                            <strong>How it's used:</strong> When you tap "Scan Receipt" or "Capture Invoice," the camera
+                            activates to take a photo. Images are immediately processed and can be stored locally or
+                            synced to your account.
+                        </p>
+
+                        <h3>🖼️ Photo Library Access</h3>
+                        <p><strong>Why we need it:</strong> To allow you to upload existing photos of receipts from your
+                            device's photo library.<br>
+                            <strong>How it's used:</strong> When you select "Choose from Gallery," you can browse and
+                            select previously captured images to import into Slip-Scan.
+                        </p>
+
+                        <h3>💾 Storage Access</h3>
+                        <p><strong>Why we need it:</strong> To save exported reports, backup data, and store processed
+                            documents on your device.<br>
+                            <strong>How it's used:</strong> When you export expense reports as PDF or CSV files, they
+                            are saved to your device storage for sharing or archiving.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="legal-card">
+                    <div id="usage" class="legal-section section-anchor">
+                        <h2>4. How We Use Your Data</h2>
+                        <p>We use the information we collect for the following purposes:</p>
+                        <ul>
+                            <li><strong>Service Delivery:</strong> To provide, maintain, and improve the Slip-Scan app
+                                functionality, including document scanning, OCR processing, and expense management
+                                features</li>
+                            <li><strong>Account Management:</strong> To create and manage your account, authenticate
+                                users, and provide customer support</li>
+                            <li><strong>Data Processing:</strong> To extract text and data from scanned documents using
+                                optical character recognition (OCR) technology</li>
+                            <li><strong>Analytics and Insights:</strong> To generate expense reports, analytics
+                                dashboards, and financial insights based on your scanned documents</li>
+                            <li><strong>Communication:</strong> To send you technical notices, updates, security alerts,
+                                support messages, and administrative communications</li>
+                            <li><strong>Improvement:</strong> To analyze usage patterns, monitor app performance,
+                                troubleshoot issues, and develop new features</li>
+                            <li><strong>Security:</strong> To detect, prevent, and address fraud, security breaches, and
+                                technical issues</li>
+                            <li><strong>Legal Compliance:</strong> To comply with applicable laws, regulations, legal
+                                processes, or enforceable governmental requests</li>
+                            <li><strong>Marketing:</strong> With your consent, to send promotional materials,
+                                newsletters, and information about new features (you can opt out anytime)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="legal-card">
+                    <div id="sharing" class="legal-section section-anchor">
+                        <h2>5. How We Share Your Data</h2>
+                        <p>We do not sell your personal information to third parties. We may share your data only in the
+                            following circumstances:</p>
+
+                        <h3>5.1 Service Providers</h3>
+                        <p>We work with trusted third-party service providers who help us operate our business:</p>
+                        <ul>
+                            <li>Cloud hosting providers (for secure data storage)</li>
+                            <li>OCR and machine learning service providers (for document processing)</li>
+                            <li>Payment processors (for subscription and payment handling)</li>
+                            <li>Analytics and monitoring tools (for app performance and usage analytics)</li>
+                            <li>Email service providers (for transactional and marketing communications)</li>
+                        </ul>
+
+                        <h3>5.2 Business Transfers</h3>
+                        <p>If AppCraft Studios is involved in a merger, acquisition, asset sale, or bankruptcy, your
+                            information may be transferred as part of that transaction. We will notify you of any such
+                            change and its implications for your data.</p>
+
+                        <h3>5.3 Legal Requirements</h3>
+                        <p>We may disclose your information if required by law, court order, or government regulation,
+                            or if we believe disclosure is necessary to comply with legal obligations, protect rights,
+                            or prevent fraud.</p>
+                    </div>
+                </div>
+
+                <div class="legal-card">
+                    <div id="security" class="legal-section section-anchor">
+                        <h2>6. Data Security</h2>
+                        <p>We implement industry-standard security measures to protect your personal information from
+                            unauthorized access, alteration, disclosure, or destruction:</p>
+                        <ul>
+                            <li><strong>Encryption:</strong> Data is encrypted in transit using TLS/SSL protocols and at
+                                rest using AES-256 encryption</li>
+                            <li><strong>Access Controls:</strong> Strict access controls ensure only authorized
+                                personnel can access personal data</li>
+                            <li><strong>Regular Audits:</strong> We conduct regular security audits and vulnerability
+                                assessments</li>
+                            <li><strong>Secure Infrastructure:</strong> Our servers are hosted in secure, SOC 2
+                                compliant data centers</li>
+                        </ul>
+                        <p>However, no method of electronic transmission or storage is 100% secure. While we strive to
+                            protect your personal information, we cannot guarantee absolute security.</p>
+                    </div>
+                </div>
+
+                <div class="legal-card">
+                    <div id="retention" class="legal-section section-anchor">
+                        <h2>7. Data Retention</h2>
+                        <p>We retain your personal information only as long as necessary to fulfill the purposes
+                            outlined in this Privacy Policy. Scanned documents are retained according to your
+                            preferences; you can delete documents at any time. When data is no longer needed, we
+                            securely delete or anonymize it.</p>
+                    </div>
+                </div>
+
+                <div class="legal-card">
+                    <div id="rights" class="legal-section section-anchor">
+                        <h2>8. Your Privacy Rights</h2>
+                        <p>Depending on your location, you may have rights regarding your personal data, including
+                            access, correction, deletion, and portability. To exercise any of these rights, please
+                            contact us at <a href="mailto:support@appcraftstudios.com"
+                                style="color: var(--primary);">support@appcraftstudios.com</a>.</p>
+                    </div>
+                </div>
+
+                <div class="legal-card">
+                    <div id="children" class="legal-section section-anchor">
+                        <h2>9. Children's Privacy</h2>
+                        <p>Slip-Scan is not intended for use by individuals under the age of 18. We do not knowingly
+                            collect personal information from children. If we become aware that we have collected
+                            personal data from a child without parental consent, we will take steps to delete that
+                            information promptly. If you believe we have inadvertently collected information from a
+                            child, please contact us immediately.</p>
+                    </div>
+                </div>
+
+                <div class="legal-card">
+                    <div id="international" class="legal-section section-anchor">
+                        <h2>10. International Data Transfers</h2>
+                        <p>AppCraft Studios is based in South Africa. If you are accessing our Service from outside
+                            South Africa, please be aware that your information may be transferred to, stored, and
+                            processed in South Africa or other countries where our service providers operate.</p>
+                        <p>By using our Service, you consent to the transfer of your information to countries that may
+                            have different data protection laws than your country of residence. We ensure appropriate
+                            safeguards are in place to protect your personal information in accordance with this Privacy
+                            Policy.</p>
+                    </div>
+                </div>
+
+                <div class="legal-card">
+                    <div id="changes" class="legal-section section-anchor">
+                        <h2>11. Changes to This Privacy Policy</h2>
+                        <p>We may update this Privacy Policy from time to time to reflect changes in our practices,
+                            technology, legal requirements, or other factors. When we make material changes, we will:
+                        </p>
+                        <ul>
+                            <li>Update the "Last Updated" date at the top of this policy</li>
+                            <li>Notify you via email or in-app notification</li>
+                            <li>For significant changes, obtain your consent where required by law</li>
+                        </ul>
+                        <p>We encourage you to review this Privacy Policy periodically. Your continued use of the
+                            Service after changes are posted constitutes your acceptance of the updated policy.</p>
+                    </div>
+                </div>
+
+                <div class="legal-card">
+                    <div id="contact" class="legal-section section-anchor">
+                        <h2>12. Contact Us</h2>
+                        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data
+                            practices, please contact us:</p>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li><strong>AppCraft Studios (Pty) Ltd</strong></li>
+                            <li>Email: <a href="mailto:support@appcraftstudios.com"
+                                    style="color: var(--primary);">support@appcraftstudios.com</a></li>
+                            <li>General Inquiries: <a href="contact.html" style="color: var(--primary);">Contact
+                                    Form</a></li>
+                            <li>Address: Cape Town, South Africa</li>
+                            <li>Support Hours: Monday - Friday, 9:00 AM - 5:00 PM SAST</li>
+                        </ul>
+                        <p style="margin-top: 1rem;">We are committed to resolving privacy concerns and complaints in a
+                            timely manner. If you are not satisfied with our response, you may have the right to lodge a
+                            complaint with your local data protection authority.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/" class="footer-logo">
+                        <img src="../assets/SlipScan.png" width="30" style="border-radius: 8px" alt="Slip-Scan Logo">
+                        <span>Slip-Scan</span>
+                    </a>
+                    <p class="footer-desc">
+                        AI-powered receipt scanning and pre-accounting automation for freelancers, businesses, and teams
+                        worldwide.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="../index.html#features">Features</a></li>
+                        <li><a href="../index.html#pricing">Pricing</a></li>
+                        <li><a href="business.html">For Business</a></li>
+                        <li><a href="../index.html#integrations">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="resources.html">Blog</a></li>
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="#">API Docs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Slip-Scan. A subsidiary of AppCraft Studios Pty Ltd. All rights reserved.</p>
+                <div class="footer-certifications">
+                    <span title="Data is encrypted at rest and in transit"><i class="fas fa-lock"></i> 256-bit
+                        Encryption</span>
+                    <span title="We support data rights and deletion"><i class="fas fa-user-shield"></i> GDPR
+                        Compliant</span>
+                    <span title="Built on SOC 2 certified cloud providers"><i class="fas fa-server"></i> SOC 2
+                        Infrastructure</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/animations.js"></script>
+    <script src="../scripts/theme.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
